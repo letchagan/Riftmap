@@ -166,6 +166,6 @@ Issues and pull requests are welcome, whether that's a new view, a better chart,
 ## 📄 License
 
 <!-- Choose a license (e.g. MIT) and add a LICENSE file, then update this line. -->
-License to be added.
+License added.
 
 <p align="center"><sub>Built for hunters, defenders and the curious · works offline</sub></p>
