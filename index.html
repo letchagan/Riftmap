@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0a0f14">
+<title>Riftmap: an offline atlas of disclosed bug bounty reports</title>
+<meta name="description" content="Riftmap charts publicly disclosed bug bounty reports by class, weakness and program, fully offline.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-12 -12 24 24'%3E%3Crect x='-12' y='-12' width='24' height='24' rx='6' fill='%230a0f14'/%3E%3Cpath d='M-8 -1.2A8 8 0 0 1 6.9 -4M8 1.2A8 8 0 0 1 -6.9 4' fill='none' stroke='%23d6e4ec' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M-3.5 3L-1 -1 1.3 1.3 4 -3' fill='none' stroke='%232ee6c5' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<svg class="dial-bg" id="dialbg" aria-hidden="true"></svg>
+
+<header class="top">
+  <nav class="seg" id="nav" aria-label="Main"></nav>
+  <a class="brand" href="#/" aria-label="Riftmap home">
+    <svg viewBox="-12 -12 24 24" aria-hidden="true"><path d="M-9.5 -1.5A9.5 9.5 0 0 1 8.2 -4.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M9.5 1.5A9.5 9.5 0 0 1 -8.2 4.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M-4 3.5L-1 -1 1.5 1.5 4.5 -3.5" fill="none" stroke="var(--hot)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span id="brandName">rift<b>map</b></span>
+  </a>
+  <div class="keys">
+    <button class="key" id="findBtn" type="button">Search <kbd>/</kbd></button>
+  </div>
+</header>
+
+<main id="app" tabindex="-1"></main>
+
+<div class="search" id="search" hidden>
+  <div class="sbox" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="sbar">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <input id="q" type="text" placeholder="Look up a class, weakness, program, CVE or payload…" autocomplete="off" spellcheck="false">
+      <button class="esc" id="escBtn" type="button">esc</button>
+    </div>
+    <div class="slist" id="results"></div>
+    <div class="sfoot"><span><kbd>↑</kbd><kbd>↓</kbd> move</span><span><kbd>↵</kbd> open</span><span><kbd>esc</kbd> close</span></div>
+  </div>
+</div>
+<div class="tip" id="tip" hidden></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
